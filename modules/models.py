@@ -13,9 +13,10 @@ def db():
     try:
         cur.execute('CREATE TABLE weather (id serial PRIMARY KEY,'
                                         'city_name varchar (150) NOT NULL,'
-                                        'min_temp integer NOT NULL,'
-                                        'max_temp integer NOT NULL,'
-                                        'weather_type text,'
+                                        'temp_c integer NOT NULL,'
+                                        'temp_f integer NOT NULL,'
+                                        'weather_condition text,'
+                                        'humidity integer,'
                                         'date date NOT NULL);'
                                         )
     except:
