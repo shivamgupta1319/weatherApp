@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+
+  weatherdb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: weather
+      POSTGRES_PASSWORD: shivam13
+      POSTGRES_DB: weatherdb
+    ports: 
+     - 5432:5432
