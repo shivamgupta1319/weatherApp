@@ -1,5 +1,5 @@
 import requests
-def weather_data(city_name,day):
+def weatherdata(city_name,day):
 
     api_key="70fe7371be9749a78e990750222706"
     base_url = "http://api.weatherapi.com/v1/forecast.json?"
