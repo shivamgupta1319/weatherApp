@@ -15,10 +15,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+   
         <h1>Weather Report</h1>
         <input type="text" onChange={fun} value={cityName} name='city_name' placeholder='Enter city name'/><br></br><br></br><br></br>
         <button  class="button-29" role="button" type='submit' value={"submit"} >submit</button>
-        
       </header>
     </div>
   );
