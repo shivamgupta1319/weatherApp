@@ -1,3 +1,4 @@
+from flask import flash
 from flask_restful import Resource
 import requests
 # from server.database.config import con
@@ -10,7 +11,10 @@ class weatherdata(Resource):
         api_key="70fe7371be9749a78e990750222706"
         base_url = "http://api.weatherapi.com/v1/current.json?"
         complete_url = base_url + "key=" + api_key + "&q=" + city_name
-        response = requests.get(complete_url)
+        try:
+            response = requests.get(complete_url)
+        except:
+            return flash("Please enter correct city name !!","warning")
         data = response.json()
         city_name = str(city_name)
         current_date = date.today()
