@@ -1,0 +1,5 @@
+_pycache_
+migrations
+database/_pycache_
+modules/_pycache_
+venv

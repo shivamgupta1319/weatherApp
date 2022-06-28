@@ -4,8 +4,8 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
-from .server.modules import weather_data
-from .server.database import db
+from .modules import weather_data
+from .database import db
 
 # db = SQLAlchemy()
 
