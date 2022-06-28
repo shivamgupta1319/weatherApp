@@ -1,6 +1,6 @@
 from flask_restful import Api
 from flask import Flask
-from .modules import weather_data,models
+from server.modules import weather_data,models
 from flask_cors import CORS
 
 app = Flask(__name__, static_url_path='', static_folder='')

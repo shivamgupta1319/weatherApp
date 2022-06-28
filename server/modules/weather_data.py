@@ -1,6 +1,6 @@
 from flask_restful import Resource
 import requests
-from ..database.config import con
+from server.database.config import con
 from datetime import date
 
 class weatherdata(Resource):

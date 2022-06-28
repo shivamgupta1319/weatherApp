@@ -1,5 +1,5 @@
 
-from ..database.config import con
+from server.database.config import con
 
 def db():
     try:
