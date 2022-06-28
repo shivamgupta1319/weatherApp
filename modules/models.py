@@ -1,9 +1,9 @@
 
-from database.config import config
+from ..database.config import con
 
 def db():
     try:
-        conn = config()
+        conn = con()
 
     except:
         print("connection error")
@@ -27,3 +27,5 @@ def db():
 
     cur.close()
     conn.close()
+
+db()

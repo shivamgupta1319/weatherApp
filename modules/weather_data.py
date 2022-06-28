@@ -1,6 +1,6 @@
 from flask_restful import Resource
 import requests
-from database.config import config
+from ..database.config import con
 from datetime import date
 
 class weatherdata(Resource):
@@ -10,22 +10,27 @@ class weatherdata(Resource):
         complete_url = base_url + "key=" + api_key + "&q=" + city_name
         response = requests.get(complete_url)
         data = response.json()
+        city_name = str(city_name)
         current_date = date.today()
-        temp_c=data['current']['temp_c']
-        temp_f=data['current']['temp_f']
-        condition=data['current']['condition']['text']
-        humidity = data['current']['humidity']
+        temp_c=int(data['current']['temp_c'])
+        temp_f=int(data['current']['temp_f'])
+        condition=str(data['current']['condition']['text'])
+        humidity = int(data['current']['humidity'])
 
-        conn = config()
+        conn = con()
         cur = conn.cursor()
-        cur.execute('INSERT INTO weather (city_name, min_c, temp_f, weather_condition,humidity,date)'
-                'VALUES (%s, %s, %s, %s)',
-                (city_name,
-                 temp_c,
-                 temp_f,
-                 condition,humidity,current_date)
-                )
-        data = cur.fetchall()
+        try:
+            cur.execute('INSERT INTO weather (city_name, temp_c, temp_f, weather_condition,humidity,date)'
+                    'VALUES (%s, %s, %s, %s, %s, %s)',
+                    (city_name,
+                    temp_c,
+                    temp_f,
+                    condition,humidity,current_date)
+                    )
+        except:
+            print("data not post")
+        # data = cur.fetchall()
+        conn.commit()
         cur.close()
         conn.close()
         return data
