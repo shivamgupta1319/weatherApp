@@ -25,10 +25,10 @@ function App() {
 
         <h1>Weather Report</h1>
         <input type="text" onChange={fun} value={cityName} name='city_name' placeholder='Enter city name' /><br></br><br></br><br></br>
-        <button class="button-29" role="button" type='submit' value={"submit"} onClick={() => {handleSubmit()}} >submit</button>
+        <button className="button-29" role="button" type='submit' value={"submit"} onClick={() => {handleSubmit()}} >submit</button>
       </header>
       <br></br><br></br><br></br>
-      {data && <BasicCard weatherDetails={data}/>}
+      { Object.keys(data).length > 0 && <BasicCard weatherDetails={data}/>}
     </div>
 
 
