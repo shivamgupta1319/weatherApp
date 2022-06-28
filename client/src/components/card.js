@@ -25,16 +25,16 @@ export default function BasicCard(props) {
         <Typography variant="h5" component="div"   gutterBottom>
           City  =   {location.name}
         </Typography>
-        <Typography variant="h5" component="div"   gutterBottom>
+        <Typography variant="h6" component="div"   gutterBottom>
             Temperature in F  =   {current.temp_f}
         </Typography>
-        <Typography variant="h5" component="div"   gutterBottom>
+        <Typography variant="h6" component="div"   gutterBottom>
           Temperature in C  =   {current.temp_c}
         </Typography>
-        <Typography variant="h5" component="div"   gutterBottom>
+        <Typography variant="h6" component="div"   gutterBottom>
           Humidity  =   {current.humidity}
         </Typography>
-        <Typography variant="h5" component="div"   gutterBottom>
+        <Typography variant="h6" component="div"   gutterBottom>
           Weather Condition  =   {current.condition.text}
         </Typography>
         
