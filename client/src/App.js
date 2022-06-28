@@ -1,6 +1,6 @@
 
 import './App.css';
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import BasicCard from './components/card';
 const req = require('axios');
 function App() {
